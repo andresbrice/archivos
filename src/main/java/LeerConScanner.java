@@ -13,7 +13,11 @@ public class LeerConScanner {
     double[] vec = new double[scanner.nextInt()];
 
     for (int i = 0; i < vec.length; i++) {
-      vec[i] = scanner.nextDouble();
+      try {
+        vec[i] = scanner.nextDouble();
+      }catch (NoSuchElementException e){
+        System.err.println("El numero de lineas indicado es diferente al total de las mismas");
+      }
     }
 
     scanner.close();
